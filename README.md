@@ -1,6 +1,6 @@
-# paper-server
+# Paper server preset
 
-# Running the server
+# Setup and running the server
 
 The startup for the first time is some what diffrent compared to every next startup. So hereby a small guide how to, and what to do. Most of these steps are also listed in the console itself;
 - Set the correct amount of RAM you want to allocate for the server in the `start.sh` file. 
@@ -11,3 +11,5 @@ The startup for the first time is some what diffrent compared to every next star
   - In this file set `eula=false` to `eula=true`, hereby you accept all terms and conditions listed in the link given;
 - Run `./start.sh` again; 
 - Attach to the background-session with: `tmux attach -t minecraft-server`;
+
+# Additional setup

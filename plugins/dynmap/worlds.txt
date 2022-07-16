@@ -32,7 +32,7 @@ worlds:
     -   class: org.dynmap.hdmap.HDMap
         name: South_East
         title: South East
-        icon: images/block_surface.png
+        icon: images/block_world_surface.png
         prefix: South_East
         perspective: iso_SE_30_lowres
         shader: stdtexture
@@ -47,7 +47,7 @@ worlds:
     -   class: org.dynmap.hdmap.HDMap
         name: North_West
         title: North West
-        icon: images/block_surface.png
+        icon: images/block_world_surface.png
         prefix: North_West
         perspective: iso_NW_30_lowres
         shader: stdtexture

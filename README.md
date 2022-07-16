@@ -39,20 +39,24 @@ Before you start editing the Dynmap configuration, you'll need to stop the Dynma
 /dynmap pause all
 ```
 
+If there are any worlds named with whitespace in its name, use quotation in the naming; using Dynmap commands.
+```jsx
+// Example command, world name with and without quotes
+
+/dmap worldset "Biome Bundle_nether" enabled:false
+/dmap worldset world_nether enabled:false
+```
+Note that the whole name needs to be in quotes.
+
 ## Disabling/enabling default worlds
 
 Dynmap sees every dimension as a separate world. This is why we need to disable the nether and the end separately. 
 
 ```jsx
 // Disable specific worlds
-// Don't use quotes for worlds without a space in their name(s)
 // If you want to do an opposite operation, like enabling a certain world. Change false to true.
 /dmap worldset world_the_end enabled:false
 /dmap worldset world_nether enabled:false
-
-// Use quotes for worlds with a space in the name
-/dmap worldset "Biome Bundle_nether" enabled:false
-/dmap worldset "Biome Bundle_the_end" enabled:false
 ```
 
 ## Disabling default views
@@ -60,12 +64,6 @@ Dynmap sees every dimension as a separate world. This is why we need to disable 
 We want to disable the views that are default per world that aren't disabled before this step. Since we already disabled all worlds expect the *New_World* and *Biome Bundle* those are the only ones left. Note: this step will delete all the remaining default views. If you wish to keep one you can!
 
 ```jsx
-// Use quotes for worlds with a space in the name
-/dmap mapdelete "Biome Bundle":surface
-/dmap mapdelete "Biome Bundle":flat
-/dmap mapdelete "Biome Bundle":cave
-
-// Don't use quotes for worlds without a space
 /dmap mapdelete world:surface
 /dmap mapdelete world:flat
 /dmap mapdelete world:cave
@@ -79,11 +77,8 @@ A list of predefined perspectives can be found here: [https://github.com/webbukk
 
 ```jsx
 // The confention for adding a new world is as followed
-/dmap mapadd [WorldName]:[WorldViewName] title:[visible name] perspective:[perspective] lighting:[lighting-mode] shader:stdtexture icon:[icon-location]
-
-// Adding a new views to the worlds
-/dmap mapadd New_World:South_East title:"South East" perspective:iso_SE_30_medres lighting:shadows shader:stdtexture icon:images/block_surface.png
-/dmap mapadd "Biome Bundle":South_East title:"South East" perspective:iso_SE_30_lowres lighting:shadows shader:stdtexture icon:images/block_surface.png
+// Example
+// /dmap mapadd [WorldName]:[WorldViewName] title:[visible name] perspective:[perspective] lighting:[lighting-mode] shader:stdtexture icon:[icon-location]
 
 /dmap mapadd world:South_East title:"South East" perspective:iso_SE_30_lowres lighting:shadows shader:stdtexture icon:images/block_world_surface.png
 /dmap mapadd world:North_West title:"North West" perspective:iso_NW_30_lowres lighting:shadows shader:stdtexture icon:images/block_world_surface.png

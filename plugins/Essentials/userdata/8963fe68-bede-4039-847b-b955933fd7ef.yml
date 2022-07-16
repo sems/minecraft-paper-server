@@ -1,0 +1,30 @@
+teleportenabled: true
+teleportauto: false
+godmode: true
+muted: false
+jailed: false
+ip-address: 192.168.1.1
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1657988683759
+  login: 1657989822544
+money: '0'
+last-account-name: YeFoxHD
+logoutlocation:
+  world: 871c0a54-9eb9-4e2e-93e3-c888e93c1f83
+  world-name: world
+  x: -151.4491522920419
+  y: 68.0
+  z: 147.0158627578404
+  yaw: -146.9967041015625
+  pitch: 21.449981689453125

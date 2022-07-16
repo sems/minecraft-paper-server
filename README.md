@@ -14,6 +14,10 @@ The startup for the first time is some what diffrent compared to every next star
 
 # Additional setup
 
+## Spawning of Phantoms
+
+From past experiences I noticed that a lot of players do not like interaction with Phantoms. So there are disabled in this template by default. You may still choose you re-enable the feature by using the following command: `/gamerule doInsomnia true`. To disable them from spawing use `/gamerule doInsomnia false` which is set and done by default.
+
 ## Dynmap
 
 > There are already some changes made to this template, including the dynmap configuration. Below you will find a small but comprehensive guide about, some basic changes, where some are already done. You may want to use these instructions in some other way.

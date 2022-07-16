@@ -20,3 +20,5 @@ spigot.yml
 usercache.json
 version_history.json
 whitelist.json
+plugins/Plan/database.db-wal
+plugins/Plan/database.db-shm

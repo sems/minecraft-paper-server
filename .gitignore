@@ -11,6 +11,7 @@ world_the_end/*
 .console_history
 banned-ips.json
 banned-players.json
+commands.yml
 eula.txt
 help.yml
 ops.json

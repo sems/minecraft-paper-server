@@ -222,6 +222,8 @@ Export:
 # If a plugin is causing issues the integration can be disabled by setting Plugin_name.Enabled: false
 # -----------------------------------------------------
 Plugins:
+    AuthMe:
+        Enabled: true
     Buycraft:
         # https://docs.tebex.io/store/faq#how-can-i-find-my-secret-key
         Secret: '-'

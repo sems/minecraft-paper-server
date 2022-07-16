@@ -22,3 +22,6 @@ version_history.json
 whitelist.json
 plugins/Plan/database.db-wal
 plugins/Plan/database.db-shm
+plugins/AuthMe/authme.db
+plugins/AuthMe/playerdata/*
+

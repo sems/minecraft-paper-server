@@ -20,8 +20,13 @@ spigot.yml
 usercache.json
 version_history.json
 whitelist.json
+
 plugins/Plan/database.db-wal
 plugins/Plan/database.db-shm
 plugins/AuthMe/authme.db
 plugins/AuthMe/playerdata/*
+plugins/AuthMe/authme.log
+plugins/AuthMe/spawn.yml
 
+plugins/LuckPerms/luckperms-h2.mv.db
+plugins/dynmap/world.pending

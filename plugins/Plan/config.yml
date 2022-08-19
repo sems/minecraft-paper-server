@@ -192,6 +192,7 @@ World_aliases:
     # Automatically generated, if regex matches world will not be added here.
     List:
         world: world
+        world_nether: "world_nether"
     # List of - "alias:regex" rules, Set alias of multiple worlds that match regex to group them
     Regex:
       - "Alias for world:^abc$"

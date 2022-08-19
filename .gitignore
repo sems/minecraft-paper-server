@@ -18,6 +18,7 @@ usercache.json
 version_history.json
 whitelist.json
 
+plugins/Archive/*
 plugins/Plan/cached_json/*
 plugins/Plan/database.db
 plugins/Plan/database.db-wal
@@ -29,9 +30,11 @@ plugins/AuthMe/authme.log
 plugins/AuthMe/spawn.yml
 
 plugins/LuckPerms/luckperms-h2.mv.db
+plugins/LuckPerms/translations/*
 
 plugins/dynmap/world.pending
 plugins/dynmap/web/*
+plugins/dynmap/ids-by-ip.txt
 
 plugins/Essentials/userdata/*
 plugins/Essentials/usermap.csv

@@ -183,8 +183,8 @@ components:
     
   - class: org.dynmap.ClientComponent
     type: timeofdayclock
-    showdigitalclock: true
-    showweather: true
+    showdigitalclock: false
+    showweather: false
   # Mouse pointer world coordinate display
   - class: org.dynmap.ClientComponent
     type: coord
@@ -366,7 +366,7 @@ login-required: false
 timesliceinterval: 0.0
 
 # Maximum chunk loads per server tick (1/20th of a second) - reducing this below 90 will impact render performance, but also will reduce server thread load
-maxchunkspertick: 200
+maxchunkspertick: 75
 
 # Progress report interval for fullrender/radiusrender, in tiles.  Must be 100 or greater
 progressloginterval: 100

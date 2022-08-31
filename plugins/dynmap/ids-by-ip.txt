@@ -1,5 +1,0 @@
-%YAML 1.1
----
-'192_168_1_1':
-- YeFoxHD
-- Tessssaa

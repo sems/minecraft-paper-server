@@ -1,6 +1,59 @@
 # Paper server preset
 
-# Setup and running the server (CLI)
+## Setup and running the server (Docker) - adviced
+
+Before you begin, make sure you have the following prerequisites installed:
+
+- Docker: Install Docker
+
+### Supported Minecraft Versions
+- 1.20.1
+- 1.20
+- 1.19.4
+- 1.19.3
+- 1.19.2
+- 1.19.1
+- 1.19
+
+### Usage
+
+1. Pull the Docker image from Docker Hub:
+```bash
+docker pull yefox/minecraft-paper-server
+```
+
+2. Start the Minecraft Paper server Docker container:
+```bash
+docker run -d -p 25565:25565 -p 8123:8123 --name minecraft-paper-server yefox/minecraft-paper-server
+```
+
+You can customize the memory allocated to the server by adding the `MEMORY` environment variable. In the example `4G` stands for four Gibibytese. 
+```bash
+docker run -d -p 25565:25565 -p 8123:8123 --name minecraft-paper-server -e MEMORY=4G yefox/minecraft-paper-serve
+```
+
+You can also change the Minecraft version of the server easily by adding the `MINECRAFT_VERSION` environment variable:
+```bash
+docker run -d -p 25565:25565 -p 8123:8123 --name minecraft-paper-server -e MEMORY=4G -e MINECRAFT_VERSION=1.19.1 yefox/minecraft-paper-serve
+```
+
+3. Access the Minecraft server in your Minecraft client using the server IP or domain name and port 25565.
+4. Access Dynmap in your web browser at http://localhost:8123.
+
+## Stopping and Removing the Container
+To stop and remove the Minecraft Paper server container, use the following commands:
+
+```bash
+docker stop minecraft-paper-server
+docker rm minecraft-paper-server
+```
+
+### Additional Configuration
+- To modify server settings, edit the server.properties file in the data directory.
+- To add or manage plugins, place them in the plugins directory.
+- To customize Dynmap settings, edit the dynmap_config.txt file in the plugins/Dynmap directory.
+
+## Setup and running the server (CLI) - deprecated
 
 -- docker setup below --
 
@@ -13,51 +66,7 @@ The startup for the first time is some what diffrent compared to every next star
   - In this file set `eula=false` to `eula=true`, hereby you accept all terms and conditions listed in the link given;
 - Run `./start.sh` again; 
 - Attach to the background-session with: `tmux attach -t minecraft-server`;
-
-# Setup and running the server (Docker)
-
-Before you begin, make sure you have the following prerequisites installed:
-
-- Docker: Install Docker
-
-## Usage
-1. Clone this repository to your local machine:
-```bash
-git clone https://github.com/sems/minecraft-paper-server.git
-cd minecraft-paper-server
-```
-
-2. Build the Docker image:
-```bash
-docker build -t minecraft-paper-server .d
-```
-
-3. Start the Minecraft Paper server Docker container:
-```bash
-docker run -d -p 25565:25565 -p 8123:8123 --name minecraft-paper-server-1.19 minecraft-paper-server
-```
-You can customize the memory allocated to the server by adding the MEMORY environment variable:
-
-
-```bash
-docker run -d -p 25565:25565 -p 8123:8123 --name minecraft-paper-server-1.19 -e MEMORY=4G minecraft-paper-server
-```
-4. Access the Minecraft server in your Minecraft client using the server IP or domain name and port 25565.
-5. Access Dynmap in your web browser at http://localhost:8123.
-
-## Stopping and Removing the Container
-To stop and remove the Minecraft Paper server container, use the following commands:
-
-```bash
-docker stop minecraft-paper-server-1.19
-docker rm minecraft-paper-server-1.19
-```
-
-## Additional Configuration
-- To modify server settings, edit the server.properties file in the data directory.
-- To add or manage plugins, place them in the plugins directory.
-- To customize Dynmap settings, edit the dynmap_config.txt file in the plugins/Dynmap directory.
-
+- 
 # Additional setup
 
 ## Spawning of Phantoms

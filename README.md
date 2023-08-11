@@ -1,6 +1,8 @@
 # Paper server preset
 
-# Setup and running the server
+# Setup and running the server (CLI)
+
+-- docker setup below --
 
 The startup for the first time is some what diffrent compared to every next startup. So hereby a small guide how to, and what to do. Most of these steps are also listed in the console itself;
 - Set the correct amount of RAM you want to allocate for the server in the `start.sh` file. 
@@ -11,6 +13,50 @@ The startup for the first time is some what diffrent compared to every next star
   - In this file set `eula=false` to `eula=true`, hereby you accept all terms and conditions listed in the link given;
 - Run `./start.sh` again; 
 - Attach to the background-session with: `tmux attach -t minecraft-server`;
+
+# Setup and running the server (Docker)
+
+Before you begin, make sure you have the following prerequisites installed:
+
+- Docker: Install Docker
+
+## Usage
+1. Clone this repository to your local machine:
+```bash
+git clone https://github.com/sems/minecraft-paper-server.git
+cd minecraft-paper-server
+```
+
+2. Build the Docker image:
+```bash
+docker build -t minecraft-paper-server .d
+```
+
+3. Start the Minecraft Paper server Docker container:
+```bash
+docker run -d -p 25565:25565 -p 8123:8123 --name minecraft-paper-server-1.19 minecraft-paper-server
+```
+You can customize the memory allocated to the server by adding the MEMORY environment variable:
+
+
+```bash
+docker run -d -p 25565:25565 -p 8123:8123 --name minecraft-paper-server-1.19 -e MEMORY=4G minecraft-paper-server
+```
+4. Access the Minecraft server in your Minecraft client using the server IP or domain name and port 25565.
+5. Access Dynmap in your web browser at http://localhost:8123.
+
+## Stopping and Removing the Container
+To stop and remove the Minecraft Paper server container, use the following commands:
+
+```bash
+docker stop minecraft-paper-server-1.19
+docker rm minecraft-paper-server-1.19
+```
+
+## Additional Configuration
+- To modify server settings, edit the server.properties file in the data directory.
+- To add or manage plugins, place them in the plugins directory.
+- To customize Dynmap settings, edit the dynmap_config.txt file in the plugins/Dynmap directory.
 
 # Additional setup
 

@@ -1,0 +1,15 @@
+version: '3'
+services:
+  minecraft:
+    build: .
+    container_name: minecraft-paper-server-1.19
+    ports:
+      - "25565:25565"
+      - "8123:8123"
+    environment:
+      - MEMORY=8G  # Default memory, you can change this or specify it when running
+    volumes:
+      - minecraft-data:/minecraft
+
+volumes:
+  minecraft-data:

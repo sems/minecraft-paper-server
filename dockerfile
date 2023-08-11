@@ -1,15 +1,19 @@
-# Use an official OpenJDK image as the base image
-FROM adoptopenjdk:16-jre-hotspot
+# Use an official AdoptOpenJDK image as the base image
+FROM openjdk:17-jdk
+
+# Set environment variables
+ENV MEMORY=2G
 
 # Set the working directory
 WORKDIR /minecraft
 
-# Copy the repository contents into the container
-COPY . /minecraft
+# Copy the entrypoint script
+COPY entrypoint.sh /minecraft/entrypoint.sh
+RUN chmod +x /minecraft/entrypoint.sh
 
 # Expose necessary ports
 EXPOSE 25565
 EXPOSE 8123
 
 # Entrypoint command
-CMD ["./dockerstart.sh"]
+CMD ["/minecraft/entrypoint.sh"]

@@ -1,4 +1,4 @@
-# Paper server preset
+# Minecraft Paper Server
 
 ## Setup and running the server (Docker) - adviced
 

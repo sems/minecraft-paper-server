@@ -19,7 +19,7 @@ case "$MINECRAFT_VERSION" in
   "1.19.2") PAPER_BUILD=307 ;;
   "1.19.3") PAPER_BUILD=448 ;;
   "1.19.4") PAPER_BUILD=550 ;;
-  "1.20") PAPER_BUILD=17 ;;
+  "1.20") PAPER_BUILD=217 ;;
   *) echo "Unsupported Minecraft version"; exit 1 ;;
 esac
 

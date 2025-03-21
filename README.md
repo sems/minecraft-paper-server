@@ -7,13 +7,21 @@ Before you begin, make sure you have the following prerequisites installed:
 - Docker: Install Docker
 
 ### Supported Minecraft Versions
-- 1.20.1
-- 1.20
-- 1.19.4
-- 1.19.3
-- 1.19.2
-- 1.19.1
-- 1.19
+- 1.21.4 (214)
+- 1.21.3 (82)
+- 1.21.1 (132)
+- 1.21 (130)
+- 1.20.6 (151)
+- 1.20.5 (22)
+- 1.20.4 (499)
+- 1.20.2 (318)
+- 1.20.1 (196)
+- 1.20 (17)
+- 1.19.4 (550)
+- 1.19.3 (448)
+- 1.19.2 (307)
+- 1.19.1 (111)
+- 1.19 (81)
 
 ### Usage
 

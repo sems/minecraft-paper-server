@@ -1,6 +1,9 @@
 # Use an official AdoptOpenJDK image as the base image
 FROM openjdk:23-jdk
 
+# Labels
+LABEL org.opencontainers.image.source=https://github.com/sems/minecraft-paper-server/
+
 # Set environment variables
 ENV MEMORY=2G
 ENV OP_USERNAME=""

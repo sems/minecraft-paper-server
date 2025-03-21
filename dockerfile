@@ -1,5 +1,5 @@
 # Use an official AdoptOpenJDK image as the base image
-FROM openjdk:17-jdk
+FROM openjdk:23-jdk
 
 # Set environment variables
 ENV MEMORY=2G

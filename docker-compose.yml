@@ -8,5 +8,5 @@ services:
       - "8123:8123"
     environment:
       - MEMORY=8G
-      - MINECRAFT_VERSION=1.20.1
       - ACCEPT_EULA=true
+      - MINECRAFT_VERSION=1.21.4

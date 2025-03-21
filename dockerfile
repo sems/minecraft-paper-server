@@ -3,6 +3,8 @@ FROM openjdk:23-jdk
 
 # Set environment variables
 ENV MEMORY=2G
+ENV OP_USERNAME=""
+ENV OP_UUID=""
 
 # Set the working directory
 WORKDIR /minecraft

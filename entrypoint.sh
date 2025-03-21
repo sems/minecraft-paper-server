@@ -37,5 +37,23 @@ curl -o paper.jar -L "https://api.papermc.io/v2/projects/paper/versions/$MINECRA
 # Accept Minecraft EULA
 echo "eula=true" > eula.txt
 
+# Setup operator if username and UUID are provided
+if [ ! -z "$OP_USERNAME" ] && [ ! -z "$OP_UUID" ]; then
+  echo "Setting up operator: $OP_USERNAME with UUID: $OP_UUID"
+  # Create ops.json file if it doesn't exist
+  mkdir -p ops
+  cat > ops.json << EOF
+[
+  {
+    "uuid": "$OP_UUID",
+    "name": "$OP_USERNAME",
+    "level": 4,
+    "bypassesPlayerLimit": true
+  }
+]
+EOF
+  echo "Operator file created successfully."
+fi
+
 # Start Minecraft server
 java -Xms1G -Xmx${MEMORY} -jar paper.jar

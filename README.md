@@ -23,6 +23,16 @@ Before you begin, make sure you have the following prerequisites installed:
 - 1.19.1 (111)
 - 1.19 (81)
 
+### Environment variables
+
+| Environment Variable | Description | Default Value | Required |
+|---------------------|-------------|---------------|----------|
+| `MINECRAFT_VERSION` | Minecraft version to use | 1.21.4 | No |
+| `ACCEPT_EULA` | Accept Minecraft EULA (set to "true" if you accept them) | false | Yes |
+| `MEMORY` | Memory allocation for the server | 2G | No |
+| `OP_USERNAME` | Username for the first server operator | - | No |
+| `OP_UUID` | UUID of the first server operator | - | No |
+
 ### Usage
 
 1. Pull the Docker image from Docker Hub:
@@ -45,6 +55,11 @@ You can also change the Minecraft version of the server easily by adding the `MI
 docker run -d -p 25565:25565 -p 8123:8123 --name minecraft-paper-server -e MEMORY=4G -e MINECRAFT_VERSION=1.19.1 yefox/minecraft-paper-serve
 ```
 
+To set the server's first operator you need to supply two different environment variables. Supply `OP_USERNAME` with the username, and `OP_UUID` with the user's associated [UUID (check here)](https://mcuuid.net/). The end result should look something like:
+```bash
+docker run -d -p 25565:25565 -p 8123:8123 --name minecraft-paper-server -e MEMORY=4G -e MINECRAFT_VERSION=1.19.1 -e OP_USERNAME=Username -e OP_UUID=11112222-3333-4444-5555-666677778888 yefox/minecraft-paper-serve
+```
+
 3. Access the Minecraft server in your Minecraft client using the server IP or domain name and port 25565.
 4. Access Dynmap in your web browser at http://localhost:8123.
 
@@ -56,26 +71,11 @@ docker stop minecraft-paper-server
 docker rm minecraft-paper-server
 ```
 
-### Additional Configuration
+# Additional options
+
 - To modify server settings, edit the server.properties file in the data directory.
 - To add or manage plugins, place them in the plugins directory.
-- To customize Dynmap settings, edit the dynmap_config.txt file in the plugins/Dynmap directory.
-
-## Setup and running the server (CLI) - deprecated
-
--- docker setup below --
-
-The startup for the first time is some what diffrent compared to every next startup. So hereby a small guide how to, and what to do. Most of these steps are also listed in the console itself;
-- Set the correct amount of RAM you want to allocate for the server in the `start.sh` file. 
-  - The `Xmx18G`-argument correlates to the maximum amount of memory the minecraft-server may use, and `Xms8G` to the minimum. 
-  - Change the `18G` and `8G` to the amount you want to allocate, `G` stands to Gibibytes in this case. 
-- Run `./start.sh`. If you get a message that `tmux` is not recognized, run `sudo apt-get install tmux` first;
-- You will see a message which states that you need to accept the EULA, which is located in `eula.txt`;
-  - In this file set `eula=false` to `eula=true`, hereby you accept all terms and conditions listed in the link given;
-- Run `./start.sh` again; 
-- Attach to the background-session with: `tmux attach -t minecraft-server`;
-- 
-# Additional setup
+- To customize Dynmap settings, edit the dynmap_config.txt file in the `minecraft/plugins/Dynmap` directory.
 
 ## Spawning of Phantoms
 
@@ -95,7 +95,7 @@ There are three default views per world. Note: the 3D-views are in high-resoluti
 - 3D-view on a 30-degree angle faced from the south-east.
 - 3D-view of caves (underground).
 
-## Preparation
+### Preparation
 
 We are assuming that all of these commands are performed in-game by a player with the right privileges. These commands can be ran in the console. When you are doing this, you need to remove the `/` before each command.
 
@@ -115,7 +115,7 @@ If there are any worlds named with whitespace in its name, use quotation in the 
 ```
 Note that the whole name needs to be in quotes.
 
-## Disabling/enabling default worlds
+### Disabling/enabling default worlds
 
 Dynmap sees every dimension as a separate world. This is why we need to disable the nether and the end separately. 
 
@@ -126,7 +126,7 @@ Dynmap sees every dimension as a separate world. This is why we need to disable 
 /dmap worldset world_nether enabled:false
 ```
 
-## Disabling default views
+### Disabling default views
 
 We want to disable the views that are default per world that aren't disabled before this step. Since we already disabled all worlds expect the *New_World* and *Biome Bundle* those are the only ones left. Note: this step will delete all the remaining default views. If you wish to keep one you can!
 
@@ -136,7 +136,7 @@ We want to disable the views that are default per world that aren't disabled bef
 /dmap mapdelete world:cave
 ```
 
-## Creating new views
+### Creating new views
 
 Now that all the default views of the remaining worlds are deleted we want to create some new views. These views are 3D and have the same view-angle as the default, but in a lower resolution, which of-course takes less hard-disk-space.
 

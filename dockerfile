@@ -11,6 +11,10 @@ WORKDIR /minecraft
 COPY entrypoint.sh /minecraft/entrypoint.sh
 RUN chmod +x /minecraft/entrypoint.sh
 
+# Create plugins directory and copy JAR files
+RUN mkdir -p /minecraft/plugins
+COPY plugins/*.jar /minecraft/plugins/
+
 # Expose necessary ports
 EXPOSE 25565
 EXPOSE 8123

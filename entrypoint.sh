@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get the Minecraft version from the environment variable
-MINECRAFT_VERSION=${MINECRAFT_VERSION:-1.20.1}  # Default version if not provided
+MINECRAFT_VERSION=${MINECRAFT_VERSION:-1.21.4}  # Default version if not provided
 
 # Accept Minecraft EULA
 ACCEPT_EULA=${ACCEPT_EULA:-false}  # Default to false if not provided
@@ -13,13 +13,21 @@ fi
 
 # Map version numbers to build numbers
 case "$MINECRAFT_VERSION" in
-  "1.20.1") PAPER_BUILD=117 ;;
-  "1.19") PAPER_BUILD=81 ;;
-  "1.19.1") PAPER_BUILD=111 ;;
-  "1.19.2") PAPER_BUILD=307 ;;
-  "1.19.3") PAPER_BUILD=448 ;;
+  "1.21.4") PAPER_BUILD=214 ;;
+  "1.21.3") PAPER_BUILD=82 ;;
+  "1.21.1") PAPER_BUILD=132 ;;
+  "1.21") PAPER_BUILD=130 ;;
+  "1.20.6") PAPER_BUILD=151 ;;
+  "1.20.5") PAPER_BUILD=22 ;;
+  "1.20.4") PAPER_BUILD=499 ;;
+  "1.20.2") PAPER_BUILD=318 ;;
+  "1.20.1") PAPER_BUILD=196 ;;
+  "1.20") PAPER_BUILD=17 ;;
   "1.19.4") PAPER_BUILD=550 ;;
-  "1.20") PAPER_BUILD=217 ;;
+  "1.19.3") PAPER_BUILD=448 ;;
+  "1.19.2") PAPER_BUILD=307 ;;
+  "1.19.1") PAPER_BUILD=111 ;;
+  "1.19") PAPER_BUILD=81 ;;
   *) echo "Unsupported Minecraft version"; exit 1 ;;
 esac
 
